@@ -31,6 +31,26 @@ public class PessoaController {
         return action.findByNome(nome);
     }
 
+    @GetMapping("/count")
+    public long contar(){
+        return action.count();
+    }
+
+    @GetMapping("/orderBy-name")
+    public List<PessoaModel> ordernarPorNome(){
+        return action.findByOrderByNome();
+    }
+
+    @GetMapping("/exemple-orderBy-name")
+    public List<PessoaModel> filtrarPorNomeEOrdenar(){
+        return action.findByNomeOrderByIdade("Eduardo");
+    }
+
+    @GetMapping("orderBy-age")
+    public List<PessoaModel> ordenarPorIdade(){
+        return action.findByOrderByIdade();
+    }
+
 
     @PostMapping
     @Transactional
@@ -39,6 +59,7 @@ public class PessoaController {
     }
 
     @PutMapping
+    @Transactional
     public PessoaModel editar(@RequestBody PessoaModel dadosPessoa){
         return action.save(dadosPessoa);
     }

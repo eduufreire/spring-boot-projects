@@ -17,4 +17,9 @@ public interface PessoaRepository extends CrudRepository<PessoaModel, Integer> {
 
     PessoaModel findByNome(String nome);
 
+    List<PessoaModel> findByOrderByNome();
+
+    List<PessoaModel> findByOrderByIdade();
+
+    List<PessoaModel> findByNomeOrderByIdade(String nome);
 }
