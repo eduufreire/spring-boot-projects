@@ -2,8 +2,10 @@ package com.example.demo.controllers;
 
 import com.example.demo.model.PessoaModel;
 import com.example.demo.repository.PessoaRepository;
+import com.example.demo.service.Servico;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,19 +18,18 @@ public class PessoaController {
     @Autowired
     private PessoaRepository action;
 
+    @Autowired
+    private Servico servico;
+
+
     @GetMapping
-    public List<PessoaModel> listar(){
-        return action.findAll();
+    public ResponseEntity<List<PessoaModel>> listar(){
+        return servico.selecionar();
     }
 
     @GetMapping("/{id}")
-    public PessoaModel buscarPorID(@PathVariable int id){
-        return action.findById(id);
-    }
-
-    @GetMapping("/teste/{nome}")
-    public PessoaModel buscarPorNOME(@PathVariable String nome){
-        return action.findByNome(nome);
+    public ResponseEntity<PessoaModel> buscarPorID(@PathVariable int id){
+        return servico.selecionarPorCodigo(id);
     }
 
     @GetMapping("/count")
@@ -37,8 +38,8 @@ public class PessoaController {
     }
 
     @GetMapping("/orderBy-name")
-    public List<PessoaModel> ordernarPorNome(){
-        return action.findByOrderByNome();
+    public ResponseEntity<List<PessoaModel>> ordernarPorNome(){
+        return servico.ordenarPorNome();
     }
 
     @GetMapping("/exemple-orderBy-name")
@@ -46,22 +47,48 @@ public class PessoaController {
         return action.findByNomeOrderByIdade("Eduardo");
     }
 
+    @GetMapping("/nome-contem/{nome}")
+    public List<PessoaModel> nomeContem(@PathVariable String nome){
+        return action.findByNomeContaining(nome);
+    }
+
+    @GetMapping("/nome-inicia/{nome}")
+    public List<PessoaModel> iniciaCom(@PathVariable String nome){
+        return action.findByNomeStartsWith(nome);
+    }
+
+    @GetMapping("/nome-termina/{nome}")
+    public List<PessoaModel> terminaCom(@PathVariable String nome){
+        return action.findByNomeEndsWith(nome);
+    }
+
     @GetMapping("orderBy-age")
     public List<PessoaModel> ordenarPorIdade(){
         return action.findByOrderByIdade();
     }
 
+    @GetMapping("/soma-idades")
+    public int somaIdades(){
+        return action.somaIdades();
+    }
+
+    @GetMapping("/idade-maior/{idade}")
+    public List<PessoaModel> idadeMaior(@PathVariable int idade){
+        return action.idadeMaiorIgual(idade);
+    }
 
     @PostMapping
     @Transactional
-    public PessoaModel cadastrar(@RequestBody PessoaModel p){
-        return action.save(p);
+    public ResponseEntity<?> cadastrar(@RequestBody PessoaModel p){
+
+        return servico.cadastrar(p);
+
     }
 
     @PutMapping
     @Transactional
-    public PessoaModel editar(@RequestBody PessoaModel dadosPessoa){
-        return action.save(dadosPessoa);
+    public ResponseEntity<?> editar(@RequestBody PessoaModel dadosPessoa){
+        return servico.editar(dadosPessoa);
     }
 
     @DeleteMapping("/{id}")

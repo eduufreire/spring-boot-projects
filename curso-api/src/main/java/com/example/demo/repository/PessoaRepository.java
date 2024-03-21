@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.PessoaModel;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,11 +16,25 @@ public interface PessoaRepository extends CrudRepository<PessoaModel, Integer> {
 
     PessoaModel findById(int id);
 
-    PessoaModel findByNome(String nome);
+    Integer countById(Integer id);
 
     List<PessoaModel> findByOrderByNome();
 
     List<PessoaModel> findByOrderByIdade();
 
     List<PessoaModel> findByNomeOrderByIdade(String nome);
+
+    List<PessoaModel> findByNomeContaining(String nome);
+
+    List<PessoaModel> findByNomeStartsWith(String nome);
+
+    List<PessoaModel> findByNomeEndsWith(String nome);
+
+    @Query(value="select sum(idade) from pessoa", nativeQuery = true)
+    int somaIdades();
+
+    @Query(value = "select * from pessoa where idade >= :idade", nativeQuery = true)
+    List<PessoaModel> idadeMaiorIgual(int idade);
+
+
 }

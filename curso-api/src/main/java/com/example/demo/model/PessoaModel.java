@@ -16,6 +16,6 @@ public class PessoaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private String idade;
+    private Integer idade;
 
 }

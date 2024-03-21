@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e45d8ee6-61f0-42d0-a193-8e439525b0c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/model/Mensagem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/service/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/controllers/PessoaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/controllers/PessoaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/model/PessoaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/model/PessoaModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/repository/PessoaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../curso-api/src/main/java/com/example/demo/repository/PessoaRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2d3erIRN7z5ou1Kxb7Nl4zaRsIR" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Projeto03StatusHttpApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dusou/Documents/spring-boot-learning/projeto03-status-http-02231002"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e45d8ee6-61f0-42d0-a193-8e439525b0c9" name="Changes" comment="" />
+      <created>1709241386485</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709241386485</updated>
+    </task>
+    <servers />
+  </component>
+</project>
